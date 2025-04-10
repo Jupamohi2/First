@@ -8,9 +8,9 @@ public class Main {
                 Cliente cliente2 = new Cliente("Ana Gómez", "987654321");
                 Cliente cliente3 = new Cliente("Luis Martínez", "456789123");
 
-                Camara camara1 = new Camara(1, "Canon", "EOS 4000D");
-                Camara camara2 = new Camara(2, "Nikon", "D3500");
-                Camara camara3 = new Camara(3, "Sony", "Alpha 6000");
+                Producto camara1 = new Camara(1, "Canon", "EOS 4000D");
+                Producto camara2 = new Camara(2, "Nikon", "D3500");
+                Producto camara3 = new Camara(3, "Sony", "Alpha 6000");
 
                 Foto foto1 = new Foto("playa.jpg");
                 Foto foto2 = new Foto("montaña.jpg");
@@ -23,9 +23,9 @@ public class Main {
                 listaFotos.add(foto3);
                 listaFotos.add(foto4);
 
-                Impresion impresion1 = new Impresion(2, "Color", listaFotos);
-                Impresion impresion2 = new Impresion(0, "blanco y negro", listaFotos);
-                Impresion impresion3 = new Impresion(0, "Color", listaFotos);
+                Producto impresion1 = new Impresion(2, "Color", listaFotos);
+                Producto impresion2 = new Impresion(0, "blanco y negro", listaFotos);
+                Producto impresion3 = new Impresion(0, "Color", listaFotos);
 
                 Pedido pedido1 = new Pedido.PedidoBuilder()
                                 .setCliente(cliente1)

@@ -24,7 +24,7 @@ public class Pedido extends Producto {
         System.out.println("Tarjeta de crédito: " + numeroTarjetaCredito);
         System.out.println("Productos del pedido:");
         for (Producto p : productos) {
-            p.mostrarDetalles(); // Polimorfismo + Composite
+            p.mostrarDetalles(); 
         }
         System.out.println("=======================");
     }
