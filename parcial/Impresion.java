@@ -1,14 +1,20 @@
 import java.util.ArrayList;
 
-
 public class Impresion extends Producto {
-    String color;
-    ArrayList<Foto> foto = new ArrayList<>();
+    private String color;
+    private ArrayList<Foto> fotos;
 
-    public Impresion(String color, ArrayList<Foto> foto, int numero){
+    public Impresion(int numero, String color, ArrayList<Foto> fotos) {
         super(numero);
         this.color = color;
-        this.foto = foto;
+        this.fotos = fotos;
     }
-    
+
+    @Override
+    public void mostrarDetalles() {
+        System.out.println("Impresión en color " + color);
+        for (Foto f : fotos) {
+            f.print();
+        }
+    }
 }

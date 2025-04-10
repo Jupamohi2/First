@@ -1,12 +1,14 @@
+public class Cliente {
+    private String cedula;
+    private String nombre;
 
-
-public class Cliente{
-     String cedula;
-     String nombre;
-
-
-    public Cliente(String cedula,String nombre){
+    public Cliente(String cedula, String nombre) {
         this.cedula = cedula;
-        this.cedula = nombre;
+        this.nombre = nombre;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
 }
