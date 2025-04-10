@@ -1,32 +1,37 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class Pedido {
+public class Pedido extends Producto {
     private Cliente cliente;
-    private ArrayList<Producto> productos;
+    private List<Producto> productos;
     private Date fecha;
     private int numeroTarjetaCredito;
 
-    // Constructor privado: el único modo de crear un Pedido es a través del Builder
-    private Pedido(PedidoBuilder builder) {
+    private Pedido(PedidoBuilder builder, int numero) {
+        super(numero);
         this.cliente = builder.cliente;
         this.productos = builder.productos;
         this.fecha = builder.fecha;
         this.numeroTarjetaCredito = builder.numeroTarjetaCredito;
     }
 
-    public void mostrarPedido() {
-        System.out.println("Pedido del cliente: " + cliente.getNombre());
+    @Override
+    public void mostrarDetalles() {
+        System.out.println("===== PEDIDO =====");
+        System.out.println("Cliente: " + cliente.getNombre() + " (CI: " + cliente.getCedula() + ")");
         System.out.println("Fecha: " + fecha);
+        System.out.println("Tarjeta de crédito: " + numeroTarjetaCredito);
+        System.out.println("Productos del pedido:");
         for (Producto p : productos) {
-            p.mostrarDetalles(); // Polimorfismo
+            p.mostrarDetalles(); // Polimorfismo + Composite
         }
+        System.out.println("=======================");
     }
 
-    // Clase interna static Builder
     public static class PedidoBuilder {
         private Cliente cliente;
-        private ArrayList<Producto> productos = new ArrayList<>();
+        private List<Producto> productos = new ArrayList<>();
         private Date fecha;
         private int numeroTarjetaCredito;
 
@@ -36,7 +41,7 @@ public class Pedido {
         }
 
         public PedidoBuilder addProducto(Producto producto) {
-            this.productos.add(producto);
+            productos.add(producto);
             return this;
         }
 
@@ -50,9 +55,8 @@ public class Pedido {
             return this;
         }
 
-        public Pedido build() {
-            // Aquí podrías incluir validaciones antes de construir el Pedido
-            return new Pedido(this);
+        public Pedido build(int numero) {
+            return new Pedido(this, numero);
         }
     }
 }

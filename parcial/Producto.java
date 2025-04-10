@@ -5,9 +5,9 @@ public abstract class Producto {
         this.numero = numero;
     }
 
-    public abstract void mostrarDetalles(); // polimorfismo
-
     public int getNumero() {
         return numero;
     }
+
+    public abstract void mostrarDetalles();
 }

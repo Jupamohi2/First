@@ -10,6 +10,6 @@ public class Camara extends Producto {
 
     @Override
     public void mostrarDetalles() {
-        System.out.println("Cámara " + marca + " modelo " + modelo);
+        System.out.println("Cámara: " + marca + " " + modelo + " (Producto #" + numero + ")");
     }
 }

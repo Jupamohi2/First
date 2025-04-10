@@ -2,42 +2,57 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Main {
-    public static void main(String[] args) {
-        // Crear cliente
-        // Crear cliente
-        Cliente cliente = new Cliente("123456789", "Juan Pérez");
+        public static void main(String[] args) {
 
-        // Crear cámara (Producto)
-        Camara camara1 = new Camara(1, "Canon", "EOS 4000D");
+                Cliente cliente1 = new Cliente("Juan Pérez", "123456789");
+                Cliente cliente2 = new Cliente("Ana Gómez", "987654321");
+                Cliente cliente3 = new Cliente("Luis Martínez", "456789123");
 
-        // Crear fotos
-        Foto foto1 = new Foto("playa.jpg");
-        Foto foto2 = new Foto("montaña.jpg");
+                Camara camara1 = new Camara(1, "Canon", "EOS 4000D");
+                Camara camara2 = new Camara(2, "Nikon", "D3500");
+                Camara camara3 = new Camara(3, "Sony", "Alpha 6000");
 
-        // Lista de fotos
-        ArrayList<Foto> listaFotos = new ArrayList<>();
-        listaFotos.add(foto1);
-        listaFotos.add(foto2);
+                Foto foto1 = new Foto("playa.jpg");
+                Foto foto2 = new Foto("montaña.jpg");
+                Foto foto3 = new Foto("ciudad.jpg");
+                Foto foto4 = new Foto("naturaleza.jpg");
 
-        // Crear impresión (Producto)
-        Impresion impresion1 = new Impresion(2, "Color", listaFotos);
+                ArrayList<Foto> listaFotos = new ArrayList<>();
+                listaFotos.add(foto1);
+                listaFotos.add(foto2);
+                listaFotos.add(foto3);
+                listaFotos.add(foto4);
 
-        // === NUEVO: Creamos y adaptamos una cámara antigua ===
-        CamaraAntigua camaraAntigua = new CamaraAntigua("Kodak 1965");
-        Producto camaraAdaptada = new CamaraAntiguaAdapter(3, camaraAntigua);
+                Impresion impresion1 = new Impresion(2, "Color", listaFotos);
+                Impresion impresion2 = new Impresion(0, "blanco y negro", listaFotos);
+                Impresion impresion3 = new Impresion(0, "Color", listaFotos);
 
-        // Crear pedido usando el patrón Builder + el Adapter
-        Pedido pedido = new Pedido.PedidoBuilder()
-                .setCliente(cliente)
-                .addProducto(camara1)
-                .addProducto(impresion1)
-                .addProducto(camaraAdaptada) // ← Aquí agregás el Adapter
-                .setFecha(new Date())
-                .setNumeroTarjetaCredito(123456)
-                .build();
+                Pedido pedido1 = new Pedido.PedidoBuilder()
+                                .setCliente(cliente1)
+                                .addProducto(camara1)
+                                .addProducto(impresion1)
+                                .setFecha(new Date())
+                                .setNumeroTarjetaCredito(123456)
+                                .build(100);
 
-        // Mostrar el pedido
-        pedido.mostrarPedido();
+                pedido1.mostrarDetalles();
 
-    }
+                Pedido pedido2 = new Pedido.PedidoBuilder()
+                                .setCliente(cliente2)
+                                .addProducto(camara2)
+                                .addProducto(impresion2)
+                                .setFecha(new Date())
+                                .setNumeroTarjetaCredito(654321)
+                                .build(101);
+                pedido2.mostrarDetalles();
+
+                Pedido pedido3 = new Pedido.PedidoBuilder()
+                                .setCliente(cliente3)
+                                .addProducto(camara3)
+                                .addProducto(impresion3)
+                                .setFecha(new Date())
+                                .setNumeroTarjetaCredito(789012)
+                                .build(102);
+                pedido3.mostrarDetalles();
+        }
 }
