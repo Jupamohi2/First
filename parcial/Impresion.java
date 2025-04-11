@@ -1,10 +1,10 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public class Impresion extends Producto {
     private String tipo;
-    private List<Producto> productos;  // Fotos o Impresiones
+    private ArrayList<Producto> productos; 
 
-    public Impresion(int numero, String tipo, List<Producto> productos) {
+    public Impresion(int numero, String tipo, ArrayList<Producto> productos) {
         super(numero);
         this.tipo = tipo;
         this.productos = productos;
