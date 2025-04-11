@@ -2,19 +2,19 @@ import java.util.List;
 
 public class Impresion extends Producto {
     private String tipo;
-    private List<Foto> fotos;
+    private List<Producto> productos;  // Fotos o Impresiones
 
-    public Impresion(int numero, String tipo, List<Foto> fotos) {
+    public Impresion(int numero, String tipo, List<Producto> productos) {
         super(numero);
         this.tipo = tipo;
-        this.fotos = fotos;
+        this.productos = productos;
     }
 
     @Override
     public void mostrarDetalles() {
-        System.out.println("Impresión tipo: " + tipo + " (Producto #" + numero + ")");
-        for (Foto foto : fotos) {
-            System.out.println("  - Foto: " + foto.getFichero());
+        System.out.println("Impresion tipo: " + tipo + " (Producto #" + numero + ")");
+        for (Producto p : productos) {
+            p.mostrarDetalles();
         }
     }
 }

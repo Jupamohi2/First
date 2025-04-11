@@ -1,20 +1,16 @@
-public class Foto {
+public class Foto extends Producto {
     private String fichero;
     private double tamanoMB;
 
-    public Foto(String fichero) {
+    public Foto(int numero, String fichero) {
+        super(numero);
         this.fichero = fichero;
         this.tamanoMB = 1 + Math.random() * 9;
         this.tamanoMB = Math.round(tamanoMB * 100.0) / 100.0;
     }
 
-    public String getFichero() {
-        return fichero;
+    @Override
+    public void mostrarDetalles() {
+        System.out.println("Foto: " + fichero + " (Producto #" + numero + ")");
     }
-
-    public void print() {
-        System.out.println("Foto: " + fichero + " - Tamaño: " + tamanoMB + " MB");
-    }
-
 }
-
