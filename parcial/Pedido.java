@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Pedido {
     private Cliente cliente;
-    private List<Producto> productos;
+    private ArrayList<Producto> productos;
     private Date fecha;
     private int numeroTarjetaCredito;
     private int numeroPedido;
@@ -20,6 +19,7 @@ public class Pedido {
     
     public void mostrarPedido() {
         System.out.println("===== PEDIDO =====");
+        System.out.println("Número de pedido: " + numeroPedido);
         System.out.println("Cliente: " + cliente.getNombre() + " (CI: " + cliente.getCedula() + ")");
         System.out.println("Fecha: " + fecha);
         System.out.println("Tarjeta de crédito: " + numeroTarjetaCredito);
@@ -32,7 +32,7 @@ public class Pedido {
 
     public static class PedidoBuilder {
         private Cliente cliente;
-        private List<Producto> productos = new ArrayList<>();
+        private ArrayList<Producto> productos = new ArrayList<>();
         private Date fecha;
         private int numeroTarjetaCredito;
 

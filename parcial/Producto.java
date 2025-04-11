@@ -5,9 +5,5 @@ public abstract class Producto {
         this.numero = numero;
     }
 
-    public int getNumero() {
-        return numero;
-    }
-
     public abstract void mostrarDetalles();
 }
