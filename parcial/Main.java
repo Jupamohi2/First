@@ -35,7 +35,7 @@ public class Main {
                                 .setNumeroTarjetaCredito(123456)
                                 .build(100);
 
-                pedido1.mostrarDetalles();
+                pedido1.mostrarPedido();
 
                 Pedido pedido2 = new Pedido.PedidoBuilder()
                                 .setCliente(cliente2)
@@ -44,7 +44,7 @@ public class Main {
                                 .setFecha(new Date())
                                 .setNumeroTarjetaCredito(654321)
                                 .build(101);
-                pedido2.mostrarDetalles();
+                pedido2.mostrarPedido();
 
                 Pedido pedido3 = new Pedido.PedidoBuilder()
                                 .setCliente(cliente3)
@@ -53,6 +53,6 @@ public class Main {
                                 .setFecha(new Date())
                                 .setNumeroTarjetaCredito(789012)
                                 .build(102);
-                pedido3.mostrarDetalles();
+                pedido3.mostrarPedido();
         }
 }

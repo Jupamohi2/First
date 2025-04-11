@@ -2,22 +2,23 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Pedido extends Producto {
+public class Pedido {
     private Cliente cliente;
     private List<Producto> productos;
     private Date fecha;
     private int numeroTarjetaCredito;
+    private int numeroPedido;
 
-    private Pedido(PedidoBuilder builder, int numero) {
-        super(numero);
+    private Pedido(PedidoBuilder builder, int numeroPedido) {
+        this.numeroPedido = numeroPedido;
         this.cliente = builder.cliente;
         this.productos = builder.productos;
         this.fecha = builder.fecha;
         this.numeroTarjetaCredito = builder.numeroTarjetaCredito;
     }
 
-    @Override
-    public void mostrarDetalles() {
+    
+    public void mostrarPedido() {
         System.out.println("===== PEDIDO =====");
         System.out.println("Cliente: " + cliente.getNombre() + " (CI: " + cliente.getCedula() + ")");
         System.out.println("Fecha: " + fecha);
