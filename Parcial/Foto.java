@@ -1,9 +1,10 @@
 /**
  * Representa una fotografía como un tipo de producto.
  */
-public class Foto extends Producto {
+public class Foto {
     private String fichero;
     private double tamanoMB;
+    private int numero;
 
     /**
      * Constructor de la clase Foto.
@@ -11,7 +12,7 @@ public class Foto extends Producto {
      * @param fichero Nombre del archivo de la foto.
      */
     public Foto(int numero, String fichero) {
-        super(numero);
+        this.numero = numero;
         this.fichero = fichero;
         this.tamanoMB = 1 + Math.random() * 9;
         this.tamanoMB = Math.round(tamanoMB * 100.0) / 100.0;
@@ -20,7 +21,6 @@ public class Foto extends Producto {
     /**
      * Muestra los detalles de la fotografía.
      */
-    @Override
     public void mostrarDetalles() {
         System.out.println("Foto: " + fichero + " (Producto #" + numero + ")");
     }

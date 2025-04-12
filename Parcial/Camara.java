@@ -1,9 +1,10 @@
 /**
  * Representa una cámara como un tipo de producto.
  */
-public class Camara extends Producto {
+public class Camara implements Producto {
     private String marca;
     private String modelo;
+    private int numero;
 
     /**
      * Constructor de la clase Camara.
@@ -12,7 +13,7 @@ public class Camara extends Producto {
      * @param modelo Modelo de la cámara.
      */
     public Camara(int numero, String marca, String modelo) {
-        super(numero);
+        this.numero = numero;
         this.marca = marca;
         this.modelo = modelo;
     }

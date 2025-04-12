@@ -19,22 +19,22 @@ public class Main {
         Producto camara3 = new Camara(3, "Sony", "Alpha 6000");
 
         // Escenario 3: Crear varias fotos simuladas con nombres de archivo
-        Producto foto1 = new Foto(4, "playa.jpg");
-        Producto foto2 = new Foto(5, "montaña.jpg");
-        Producto foto3 = new Foto(6, "ciudad.jpg");
-        Producto foto4 = new Foto(7, "naturaleza.jpg");
+        Foto foto1 = new Foto(4, "playa.jpg");
+        Foto foto2 = new Foto(5, "montaña.jpg");
+        Foto foto3 = new Foto(6, "ciudad.jpg");
+        Foto foto4 = new Foto(7, "naturaleza.jpg");
 
         // Escenario 4: Agrupar fotos en una lista de productos para impresión
-        ArrayList<Producto> listaProductos = new ArrayList<>();
-        listaProductos.add(foto1);
-        listaProductos.add(foto2);
-        listaProductos.add(foto3);
-        listaProductos.add(foto4);
+        ArrayList<Foto> listaFotos = new ArrayList<>();
+        listaFotos.add(foto1);
+        listaFotos.add(foto2);
+        listaFotos.add(foto3);
+        listaFotos.add(foto4);
 
         // Escenario 5: Crear impresiones tipo "Color" y "Blanco y negro"
-        Producto impresion1 = new Impresion(8, "Color", listaProductos);
-        Producto impresion2 = new Impresion(9, "Blanco y negro", listaProductos);
-        Producto impresion3 = new Impresion(10, "Color", listaProductos);
+        Producto impresion1 = new Impresion(8, "Color", listaFotos);
+        Producto impresion2 = new Impresion(9, "Blanco y negro", listaFotos);
+        Producto impresion3 = new Impresion(10, "Color", listaFotos);
 
         // Escenario 6: Crear un pedido con una cámara y una impresión a color
         Pedido pedido1 = new Pedido.PedidoBuilder()
