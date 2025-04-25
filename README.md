@@ -1,2 +1,2 @@
-# First
-este es el primer repositorio de este github, tal vez cree otros mas adelante.
+# Parcial_Ingenieria_De_Software
+este repositorio contiene el parcial de ingeniería de software 2
